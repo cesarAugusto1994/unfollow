@@ -39,6 +39,8 @@ class Auth
             'code' => $config->code])
         ->post();
 
+        dd($response);
+
         $userData = json_decode($response, true);
 
         if(isset($userData['code']) && $userData['code'] == 400) {

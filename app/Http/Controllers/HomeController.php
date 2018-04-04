@@ -21,7 +21,7 @@ class HomeController extends Controller
      */
     public function __construct(Instagram $instagram)
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         $this->instagram = $instagram;
         $this->instagram->getLoginUrl();
     }
@@ -113,19 +113,13 @@ class HomeController extends Controller
 
         $request = sprintf($requestAuth, $client_id, $redirect_uri);
 
+        dd($request);
+
         return redirect($request);
     }
 
     public function profile()
-    {
-      /*
-        $media = "https://api.instagram.com/v1/media/1204029194838322593_210915618/comments?access_token=".\Auth::user()->configurations->access_token;
-
-        $data = Curl::to($media)
-        ->get();
-
-        dd(json_decode($data, true));
-        */
+    {dd(\Auth::user()->informations);
         return view('admin.user.profile')
         ->with('user', \Auth::user());
     }

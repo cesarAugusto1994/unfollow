@@ -36,7 +36,7 @@ class User extends Authenticatable
 
     public function informations()
     {
-        return $this->hasOne(UserInformations::class);
+        return $this->hasOne(UserInformations::class, 'user_id');
     }
 
     public function counts()

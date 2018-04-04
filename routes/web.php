@@ -20,14 +20,10 @@ Route::middleware('auth')->middleware('checkAccessToken')->group(function() {
   Route::get('/home', function () {
       return redirect()->route('home');
   });
-
   Route::get('/', 'HomeController@index')->name('home');
   Route::get('/follows', 'HomeController@follows')->name('follows');
-
   Route::get('/profile', 'HomeController@profile')->name('profile');
-
   Route::get('/person/{id}/profile', 'HomeController@person')->name('person_profile');
-
   Route::get('/locations', 'HomeController@locations')->name('locations');
   Route::get('/location/{id}/medias', 'HomeController@locationMedias')->name('location_medias');
 });
