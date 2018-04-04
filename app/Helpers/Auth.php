@@ -96,6 +96,12 @@ class Auth
               $author = $hasAuthor->first();
             }
 
+            $uMedias = UserMedias::where('api_id', $dados['id'])->get();
+
+            if($uMedias->isNotEmpty()) {
+               continue;
+            }
+
             $userMedias = new UserMedias();
             $userMedias->user_id = $user->id;
             $userMedias->author_id = $author->id;
