@@ -107,7 +107,7 @@ class HomeController extends Controller
     {
         $client_id = '485375df1191478181614bdadff68ffe';
 
-        $redirect_uri = "http://localhost:8875/autenticationserver";
+        $redirect_uri = config('app.redirect_uri');
 
         $requestAuth = "https://api.instagram.com/oauth/authorize/?client_id=%s&redirect_uri=%s&response_type=code&scope=basic+public_content+follower_list+comments+relationships+likes";
 
