@@ -72,7 +72,7 @@ class RegisterController extends Controller
 
         $clientSecret = "41dc9113345148a5b0267071bcbf96c8";
         $clientId = "485375df1191478181614bdadff68ffe";
-        $redirectUri = "http://localhost:8875/autenticationserver";
+        $redirectUri = config('app.redirect_uri');
 
         $config = new Configurations();
         $config->user_id = $user->id;
